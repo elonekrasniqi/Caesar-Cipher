@@ -65,3 +65,19 @@ int main() {
 
     // Llogarit frekuencat
     map<char, double> frequencies = countFrequencies(text);
+    
+    // Shfaq frekuencat e shkronjave
+    for (const auto& pair : frequencies) {
+        cout << "Shkronja '" << pair.first << "' eshte perdorur " << pair.second << "% te kohes." << endl;
+    }
+
+    // Gjen shkronjën më të zakonshme dhe llogarit shift-in
+    char commonLetter = findMostCommonLetter(frequencies);
+    int shift = (commonLetter - 'e' + 26) % 26;
+
+    // Dekripton tekstin
+    string decryptedText = decryptCaesarCipher(text, shift);
+    cout << "Teksti i dekriptuar: " << decryptedText << endl;
+
+    return 0;
+}
