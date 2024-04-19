@@ -49,3 +49,19 @@ string decryptCaesarCipher(const string& text, int shift) {
     }
     return decryptedText;
 }
+
+int main() {
+    ifstream file("teksti.txt");
+    string text((istreambuf_iterator<char>(file)),
+                (istreambuf_iterator<char>()));
+    
+    file.close();
+
+    // Kontrollon nëse teksti është i zbrazët
+    if (text.empty()) {
+        cerr << "Fajlli eshte bosh ose nuk mund te lexohet." << endl;
+        return 1;
+    }
+
+    // Llogarit frekuencat
+    map<char, double> frequencies = countFrequencies(text);
