@@ -1,42 +1,29 @@
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <vector>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-string readPlainTextFromFile(const string& fileName) {
-    string result = "";
-    string line;
-    ifstream file(fileName);
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            result += line + "\n";
-        }
-        file.close();
-    }
-    else {
-        cout << "File not found: " << fileName << endl;
-    }
-    return result;
-}
+// Llogarit frekuencat e shkronjave dhe kthen si map
+map<char, double> countFrequencies(const string& text) {
+    map<char, int> frequencyCount;
+    int totalLetters = 0;
 
-string encrypt(const string& text, int key) {
-    string result = "";
     for (char c : text) {
-        if (c >= 'a' && c <= 'z') {
-            result += char((c - 'a' + key) % 26 + 'a');
-        }
-        else if (c >= 'A' && c <= 'Z') {
-            result += char((c - 'A' + key) % 26 + 'A');
-        }
-        else {
-            result += c;
+        if (isalpha(c)) {
+            char letter = tolower(c); // Konverton në shkronjë të vogël
+            frequencyCount[letter]++;
+            totalLetters++;
         }
     }
-    return result;
-}
 
-string decrypt(const string& text, int key) {
-    return encrypt(text, 26 - key);
-}
+    // Konverton në përqindje
+    map<char, double> frequencies;
+    for (auto& pair : frequencyCount) {
+        frequencies[pair.first] = (double)pair.second / totalLetters * 100;
+    }
 
+    return frequencies;
+}
