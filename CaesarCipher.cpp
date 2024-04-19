@@ -27,3 +27,12 @@ map<char, double> countFrequencies(const string& text) {
 
     return frequencies;
 }
+// Gjen shkronjën më të zakonshme
+char findMostCommonLetter(const map<char, double>& frequencies) {
+    pair<char, double> max = *max_element(frequencies.begin(), frequencies.end(),
+    [](const pair<char, double>& a, const pair<char, double>& b) {
+        return a.second < b.second;
+    });
+
+    return max.first;
+}
