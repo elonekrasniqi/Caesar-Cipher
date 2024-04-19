@@ -36,3 +36,16 @@ char findMostCommonLetter(const map<char, double>& frequencies) {
 
     return max.first;
 }
+
+// Dekripton tekstin e dhënë me një shift të caktuar
+string decryptCaesarCipher(const string& text, int shift) {
+    string decryptedText;
+    for (char c : text) {
+        if (isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            c = (c - shift - base + 26) % 26 + base;
+        }
+        decryptedText += c;
+    }
+    return decryptedText;
+}
