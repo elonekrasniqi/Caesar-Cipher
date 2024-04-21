@@ -20,4 +20,14 @@ Before running this code, ensure that you have the following prerequisites insta
 - C++ compiler (e.g., GCC for Linux/macOS, MinGW for Windows)
 - Standard C++ libraries
 
+### Setup Instructions
 
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/elonekrasniqi/Caesar-Cipher.git
+
+### Contributors:
+- [Elma Shabani](https://github.com/ElmaShabani)
+- [Elona Fetahu](https://github.com/ElonaFetahu)
+- [Elonë Krasniqi](https://github.com/elonekrasniqi)
+- [Elton Pajaziti](https://github.com/EltonPajaziti)
