@@ -14,3 +14,10 @@ The steps to decrypt based on frequency analysis are as follows:
 4. Use the `decrypt` method with the calculated key to decrypt the text.
 
 This approach uses the frequency of letters in the encrypted text to automatically find the decryption key. This makes it effective for breaking Caesar Cipher encryption even without knowing the key beforehand.
+
+### How to Use
+Before running this code, ensure that you have the following prerequisites installed on your device:
+- C++ compiler (e.g., GCC for Linux/macOS, MinGW for Windows)
+- Standard C++ libraries
+
+
